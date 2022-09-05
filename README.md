@@ -29,7 +29,7 @@ cp BounceStudioAPI-linux/BounceStudio.h bouncestudio/
 ```
 6. Now we are ready do build it. So let's do it:
 ```bash
-cd bouncestudio-php8/
+cd bouncestudio/
 phpize
 ./configure --enable-bouncestudio
 make CFLAGS="-lBounceStudio64 $CFLAGS"

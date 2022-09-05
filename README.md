@@ -25,7 +25,7 @@ git clone https://github.com/envialosimpledevs/bouncestudio.git
 ```
 5. Copy `BounceStudio.h` to the folder of the extension you want to build (we will build the extension for the PHP7. For PHP5 use appropriate folder):
 ```bash
-cp BounceStudioAPI-linux/BounceStudio.h bouncestudio-php8/
+cp BounceStudioAPI-linux/BounceStudio.h bouncestudio/
 ```
 6. Now we are ready do build it. So let's do it:
 ```bash

@@ -273,7 +273,7 @@ PHP_MINIT_FUNCTION(bouncestudio)
     zend_class_entry bs;
 
     INIT_CLASS_ENTRY(bs, "bounceStudio", php_bouncestudio_methods);
-    php_bouncestudio_entry = zend_register_internal_class(&bs TSRMLS_CC);
+    php_bouncestudio_entry = zend_register_internal_class(&bs);
 
     return SUCCESS;
 }

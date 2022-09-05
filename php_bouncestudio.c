@@ -13,6 +13,15 @@
 #include "php.h"
 #include "php_bouncestudio.h"
 
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_void, 0, 0, IS_VOID, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_int, 0, 0, IS_LONG, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_string, 0, 0, IS_STRING, 0)
+ZEND_END_ARG_INFO()
+
 zend_class_entry *php_bouncestudio_entry;
 
 PHP_FUNCTION(bounceStudio_DoBounceCheck)
@@ -234,35 +243,35 @@ PHP_FUNCTION(bounceStudio_construct)
 }
 
 static zend_function_entry php_bouncestudio_functions[] = {
-    PHP_FE(bounceStudio_DoBounceCheck, NULL)
-    PHP_FE(bounceStudio_GetCustomHeaderOriginalMessage, NULL)
-    PHP_FE(bounceStudio_GetCustomHeader, NULL)
-    PHP_FE(bounceStudio_MessageBody, NULL)
-    PHP_FE(bounceStudio_MessageFromAddress, NULL)
-    PHP_FE(bounceStudio_MessageFromFriendlyName, NULL)
-    PHP_FE(bounceStudio_MessageHeader, NULL)
-    PHP_FE(bounceStudio_MessageReplyToAddress, NULL)
-    PHP_FE(bounceStudio_MessageReplyToFriendlyName, NULL)
-    PHP_FE(bounceStudio_MessageSubject, NULL)
-    PHP_FE(bounceStudio_MessageToAddress, NULL)
-    PHP_FE(bounceStudio_MessageToFriendlyName, NULL)
+    PHP_FE(bounceStudio_DoBounceCheck, arginfo_int)
+    PHP_FE(bounceStudio_GetCustomHeaderOriginalMessage, arginfo_string)
+    PHP_FE(bounceStudio_GetCustomHeader, arginfo_string)
+    PHP_FE(bounceStudio_MessageBody, arginfo_string)
+    PHP_FE(bounceStudio_MessageFromAddress, arginfo_string)
+    PHP_FE(bounceStudio_MessageFromFriendlyName, arginfo_string)
+    PHP_FE(bounceStudio_MessageHeader, arginfo_string)
+    PHP_FE(bounceStudio_MessageReplyToAddress, arginfo_string)
+    PHP_FE(bounceStudio_MessageReplyToFriendlyName, arginfo_string)
+    PHP_FE(bounceStudio_MessageSubject, arginfo_string)
+    PHP_FE(bounceStudio_MessageToAddress, arginfo_string)
+    PHP_FE(bounceStudio_MessageToFriendlyName, arginfo_string)
     {NULL, NULL, NULL}
 };
 
 static zend_function_entry php_bouncestudio_methods[] = {
-    {"__construct", PHP_FN(bounceStudio_construct), NULL},
-    {"DoBounceCheck", PHP_FN(bounceStudio_DoBounceCheck), NULL},
-    {"GetCustomHeaderOriginalMessage", PHP_FN(bounceStudio_GetCustomHeaderOriginalMessage), NULL},
-    {"GetCustomHeader", PHP_FN(bounceStudio_GetCustomHeader), NULL},
-    {"MessageBody",PHP_FN(bounceStudio_MessageBody), NULL},
-    {"MessageFromAddress", PHP_FN(bounceStudio_MessageFromAddress), NULL},
-    {"MessageFromFriendlyName",PHP_FN(bounceStudio_MessageFromFriendlyName), NULL},
-    {"MessageHeader",PHP_FN(bounceStudio_MessageHeader), NULL},
-    {"MessageReplyToAddress",PHP_FN(bounceStudio_MessageReplyToAddress), NULL},
-    {"MessageReplyToFriendlyName",PHP_FN(bounceStudio_MessageReplyToFriendlyName), NULL},
-    {"MessageSubject",PHP_FN(bounceStudio_MessageSubject), NULL},
-    {"MessageToAddress",PHP_FN(bounceStudio_MessageToAddress), NULL},
-    {"MessageToFriendlyName",PHP_FN(bounceStudio_MessageToFriendlyName), NULL},
+    {"__construct", PHP_FN(bounceStudio_construct), arginfo_void},
+    {"DoBounceCheck", PHP_FN(bounceStudio_DoBounceCheck), arginfo_int},
+    {"GetCustomHeaderOriginalMessage", PHP_FN(bounceStudio_GetCustomHeaderOriginalMessage), arginfo_string},
+    {"GetCustomHeader", PHP_FN(bounceStudio_GetCustomHeader), arginfo_string},
+    {"MessageBody",PHP_FN(bounceStudio_MessageBody), arginfo_string},
+    {"MessageFromAddress", PHP_FN(bounceStudio_MessageFromAddress), arginfo_string},
+    {"MessageFromFriendlyName",PHP_FN(bounceStudio_MessageFromFriendlyName), arginfo_string},
+    {"MessageHeader",PHP_FN(bounceStudio_MessageHeader), arginfo_string},
+    {"MessageReplyToAddress",PHP_FN(bounceStudio_MessageReplyToAddress), arginfo_string},
+    {"MessageReplyToFriendlyName",PHP_FN(bounceStudio_MessageReplyToFriendlyName), arginfo_string},
+    {"MessageSubject",PHP_FN(bounceStudio_MessageSubject), arginfo_string},
+    {"MessageToAddress",PHP_FN(bounceStudio_MessageToAddress), arginfo_string},
+    {"MessageToFriendlyName",PHP_FN(bounceStudio_MessageToFriendlyName), arginfo_string},
     {NULL, NULL, NULL}
 };
 

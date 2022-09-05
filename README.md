@@ -1,4 +1,4 @@
-# The "BounceStudio API" PHP 7 extension
+# The "BounceStudio API" PHP 8 extension
 ## Topline
 This extension is a PHP API of the BounceStudio library of the BoogieTools, Inc. The extension utilizes functions of that library and completely depends on it.
 That library enables your application to recognize thousands of email bounce formats. Easy to use, robust, extremely fast, and accurate, BounceStudio API was designed for professional Linux developers who demand the best.

@@ -16,27 +16,27 @@ tar -xvzf BounceStudioAPI-linux.tar.gz
 ```
 3. Place the BounceStudio lib into a proper place on your machine (we will build it on the x86_64 platform so we use appropriate lib file and system folder):
 ```bash
-sudo cp BounceStudioAPI-linux/libBounceStudio64.so.3.7.0.962 /usr/lib64/
-sudo ln -s /usr/lib64/libBounceStudio64.so.3.7.0.962 /usr/lib64/libBounceStudio64.so
+cp BounceStudioAPI-linux/libBounceStudio64.so.3.7.0.962 /usr/lib64/
+ln -s /usr/lib64/libBounceStudio64.so.3.7.0.962 /usr/lib64/libBounceStudio64.so
 ```
 4. Time to checkout this repo:
 ```bash
-git clone git@github.com:Avaaz/bouncestudio-php7.git
+git clone https://github.com/envialosimpledevs/bouncestudio.git
 ```
 5. Copy `BounceStudio.h` to the folder of the extension you want to build (we will build the extension for the PHP7. For PHP5 use appropriate folder):
 ```bash
-cp BounceStudioAPI-linux/BounceStudio.h bouncestudio-php-7/
+cp BounceStudioAPI-linux/BounceStudio.h bouncestudio-php8/
 ```
 6. Now we are ready do build it. So let's do it:
 ```bash
-cd bouncestudio-php-7/
+cd bouncestudio-php8/
 phpize
 ./configure --enable-bouncestudio
 make CFLAGS="-lBounceStudio64 $CFLAGS"
 ```
 7. Install the extension lib to the php modules folder:
 ```bash
-sudo make install
+make install
 ```
 8. Do not forget to enable the extension in your `php.ini` configuration with:
 ```ini
